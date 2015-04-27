@@ -2,7 +2,7 @@ package = "oxnn"
 version = "scm-1"
 
 source = {
-   url = "git://github.com/szagoruyko/oxnn",
+   url = "git://github.com/tkocisky/oxnn",
    tag = "master"
 }
 
@@ -10,7 +10,7 @@ description = {
    summary = "oxnn",
    detailed = [[
    ]],
-   homepage = "https://github.com/szagoruyko/oxnn",
+   homepage = "https://github.com/tkocisky/oxnn",
    license = "BSD"
 }
 
