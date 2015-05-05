@@ -205,8 +205,10 @@ rp._cg = function(batch, type)
    -- places directly.
 
    local losses = r.S('loss')
-   for i=len,2,-1 do
-      r.E { { after_out[i-1], targets[i] },
+   --target of ouput of first time step (after_out[len-1]) is the input of 
+   --second timestep(target[len-1]), and so forth
+   for i=len-1,1,-1 do
+      r.E { { after_out[i], targets[i] },
             mod_crit,
             losses[1] }
    end
@@ -216,7 +218,7 @@ rp._cg = function(batch, type)
    -- gradient flowing back is oxnn.CriterionTable .
    r.E { {outputs[1],nil}, oxnn.CriterionTable(oxnn.ZeroLoss()), r.S('0')[1] }
    r.E { {rec_state[1],nil}, oxnn.CriterionTable(oxnn.ZeroLoss()), r.S('0')[1] }
-   r.E { {targets[1],nil}, oxnn.CriterionTable(oxnn.ZeroLoss()), r.S('0')[1] }
+   r.E { {targets[len],nil}, oxnn.CriterionTable(oxnn.ZeroLoss()), r.S('0')[1] }
    -- Ideally, we would add the above modules to the RecurrentPropagator since
    -- they allocate memory; this way they do it for each batch.
 
