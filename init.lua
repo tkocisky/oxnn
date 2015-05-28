@@ -74,7 +74,7 @@ function oxnn.InitCuda()
    pcall(require, 'fbcunn')
    torch.include('oxnn', 'nn_modif/LookupTableGPU.lua')
    oxnn.cu = oxnn.CudaUtil(true)
-   require 'liboxnn_cuda'
+   require 'liboxnn'
 end
 
 

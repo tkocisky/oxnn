@@ -13,9 +13,9 @@
 //#include "cuda.cu"
 #include "LSTM12Part2.cu"
 
-LUA_EXTERNC DLL_EXPORT int luaopen_liboxnn_cuda(lua_State *L);
+LUA_EXTERNC DLL_EXPORT int luaopen_liboxnn(lua_State *L);
 
-int luaopen_liboxnn_cuda(lua_State *L)
+int luaopen_liboxnn(lua_State *L)
 {
 
   lua_newtable(L);
