@@ -28,6 +28,11 @@ FILE(GLOB luasrc *.lua)
 
 CUDA_ADD_LIBRARY(oxnn MODULE ${src-cuda})
 TARGET_LINK_LIBRARIES(oxnn luaT THC TH)
+IF(APPLE)
+  SET_TARGET_PROPERTIES(oxnn PROPERTIES
+    LINK_FLAGS "-undefined dynamic_lookup")
+ENDIF()
+
 
 ### Torch packages supposes libraries prefix is "lib"
 SET_TARGET_PROPERTIES(oxnn PROPERTIES
