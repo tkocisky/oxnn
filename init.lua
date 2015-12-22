@@ -22,7 +22,7 @@ torch.include('oxnn', 'util/cloneManyTimes.lua')
 torch.include('oxnn', 'util/util.lua')
 
 --[[ nn modification ]]--
-torch.include('oxnn', 'nn_modif/LookupTable.lua')
+-- torch.include('oxnn', 'nn_modif/LookupTable.lua')
 torch.include('oxnn', 'nn_modif/MM.lua')
 torch.include('oxnn', 'nn_modif/SelectTable.lua')
 
