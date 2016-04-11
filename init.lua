@@ -60,9 +60,6 @@ torch.include('oxnn', 'rnn/SumLosses.lua')
 torch.include('oxnn', 'text/TextUtil.lua')
 torch.include('oxnn', 'text/Vocabulary.lua')
 
---[[ test ]]--
-torch.include('oxnn', 'test/test.lua')
-
 --[[ cuda ]]--
 torch.include('oxnn', 'util/CudaUtil.lua')
 oxnn.cu = oxnn.CudaUtil(false)
