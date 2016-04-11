@@ -131,7 +131,10 @@ function RecurrentPropagator:_s_store(ref, froms, data, add, addhelper)
                from[i] = from[i]:clone()
                addhelper[what][i] = true
             end
-            from[i]:add(data)
+            -- There is a possibility that data will be empty, in which case we ignore it
+            if type(data) ~= 'table' and data:nElement() > 0 then
+               from[i]:add(data)
+            end
          end
       else
          local fro = from[i]
