@@ -18,7 +18,6 @@ dependencies = {
    "torch >= 7.0",
    "moses",
    "nn",
-   "cunn",
    "nnx",
    "nngraph"
 }

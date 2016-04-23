@@ -22,7 +22,7 @@ torch.include('oxnn', 'util/cloneManyTimes.lua')
 torch.include('oxnn', 'util/util.lua')
 
 --[[ nn modification ]]--
-torch.include('oxnn', 'nn_modif/LookupTable.lua')
+-- torch.include('oxnn', 'nn_modif/LookupTable.lua')
 torch.include('oxnn', 'nn_modif/MM.lua')
 torch.include('oxnn', 'nn_modif/SelectTable.lua')
 
@@ -59,9 +59,6 @@ torch.include('oxnn', 'rnn/SumLosses.lua')
 --[[ text ]]--
 torch.include('oxnn', 'text/TextUtil.lua')
 torch.include('oxnn', 'text/Vocabulary.lua')
-
---[[ test ]]--
-torch.include('oxnn', 'test/test.lua')
 
 --[[ cuda ]]--
 torch.include('oxnn', 'util/CudaUtil.lua')

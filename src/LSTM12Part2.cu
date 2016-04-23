@@ -99,7 +99,6 @@ struct tuple7_transform_functor
 
   __host__ __device__ tuple7_transform_functor(SevenaryFunction f) : f(f) {}
 
-  __thrust_hd_warning_disable__
   template<typename Tuple>
   inline __host__ __device__ void operator()(Tuple t) {
     f(

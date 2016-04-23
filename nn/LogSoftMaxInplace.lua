@@ -11,11 +11,16 @@ function LogSoftMaxInplace:__init(outputInplace, gradInputInplace)
 end
 
 function LogSoftMaxInplace:updateOutput(input)
+
    if self.outputInplace then
       assert(input:isContiguous())
       self.output = input
    end
-   return input.nn.LogSoftMax_updateOutput(self, input)
+   input.THNN.LogSoftMax_updateOutput(
+      input:cdata(),
+      self.output:cdata()
+   )
+   return self.output
 end
 
 function LogSoftMaxInplace:updateGradInput(input, gradOutput)
@@ -23,5 +28,11 @@ function LogSoftMaxInplace:updateGradInput(input, gradOutput)
       assert(gradOutput:isContiguous())
       self.gradInput = gradOutput
    end
-   return input.nn.LogSoftMax_updateGradInput(self, input, gradOutput)
+   input.THNN.LogSoftMax_updateGradInput(
+      input:cdata(),
+      gradOutput:cdata(),
+      self.gradInput:cdata(),
+      self.output:cdata()
+   )
+   return self.gradInput
 end
